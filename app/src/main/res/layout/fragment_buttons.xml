@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFBF5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTituloBotones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Qué experiencia prefieres?"
+            android:textColor="#2B2B2B"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSubtituloBotones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Marca una o varias opciones y recibe una recomendación demostrativa."
+            android:textColor="#6B6B6B"
+            android:textSize="14sp" />
+
+        <!-- Fila 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbNaturaleza"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/frag_bg_card"
+                android:buttonTint="#1B5E20"
+                android:minHeight="52dp"
+                android:paddingEnd="8dp"
+                android:text="Naturaleza"
+                android:textColor="#2B2B2B" />
+
+            <CheckBox
+                android:id="@+id/cbCultura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/frag_bg_card"
+                android:buttonTint="#1B5E20"
+                android:minHeight="52dp"
+                android:paddingEnd="8dp"
+                android:text="Cultura"
+                android:textColor="#2B2B2B" />
+        </LinearLayout>
+
+        <!-- Fila 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbCafe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/frag_bg_card"
+                android:buttonTint="#1B5E20"
+                android:minHeight="52dp"
+                android:paddingEnd="8dp"
+                android:text="Café"
+                android:textColor="#2B2B2B" />
+
+            <CheckBox
+                android:id="@+id/cbAventura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/frag_bg_card"
+                android:buttonTint="#1B5E20"
+                android:minHeight="52dp"
+                android:paddingEnd="8dp"
+                android:text="Aventura"
+                android:textColor="#2B2B2B" />
+        </LinearLayout>
+
+        <!-- Fila 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbDescanso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/frag_bg_card"
+                android:buttonTint="#1B5E20"
+                android:minHeight="52dp"
+                android:paddingEnd="8dp"
+                android:text="Descanso"
+                android:textColor="#2B2B2B" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <!-- Botones de acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRecomendar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1.3"
+                android:backgroundTint="#1B5E20"
+                android:minWidth="0dp"
+                android:text="Recomendar destino"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#E8F1E4"
+                android:minWidth="0dp"
+                android:text="Limpiar selección"
+                android:textColor="#1B5E20" />
+
+            <Button
+                android:id="@+id/btnOtraAlternativa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#F9A825"
+                android:minWidth="0dp"
+                android:text="Otra alternativa"
+                android:textColor="#2B2B2B" />
+        </LinearLayout>
+
+        <!-- Resultado -->
+        <LinearLayout
+            android:id="@+id/layoutResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/frag_bg_result"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvResultadoTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tu recomendación"
+                android:textColor="#6D4C41"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvResultadoDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Selecciona tus preferencias y presiona «Recomendar destino»."
+                android:textColor="#2B2B2B"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvResultadoAlternativa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#6D4C41"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

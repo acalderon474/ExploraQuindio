@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFBF5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTituloSeccionVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recorrido audiovisual"
+            android:textColor="#2B2B2B"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSubtituloVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Controles sencillos para disfrutar el contenido turístico."
+            android:textColor="#6B6B6B"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvTituloVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Quindío entre montañas y café"
+            android:textColor="#1B5E20"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/frag_bg_video"
+            android:padding="4dp">
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+
+            <ProgressBar
+                android:id="@+id/progressVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="#F9A825" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/seekVideo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progressTint="#F9A825"
+                android:thumbTint="#F9A825" />
+
+            <TextView
+                android:id="@+id/tvTiempoVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="00:00 / 00:00"
+                android:textColor="#2B2B2B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvEstadoVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Cargando video..."
+            android:textColor="#1B5E20"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRetroceder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#E8F1E4"
+                android:contentDescription="Retroceder 10 segundos"
+                android:minWidth="0dp"
+                android:text="⏪ 10 s"
+                android:textColor="#1B5E20" />
+
+            <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#1B5E20"
+                android:contentDescription="Reproducir"
+                android:minWidth="0dp"
+                android:text="▶ Play"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnPausa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#F9A825"
+                android:contentDescription="Pausar"
+                android:minWidth="0dp"
+                android:text="⏸ Pausa"
+                android:textColor="#2B2B2B" />
+
+            <Button
+                android:id="@+id/btnAvanzar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#E8F1E4"
+                android:contentDescription="Avanzar 10 segundos"
+                android:minWidth="0dp"
+                android:text="10 s ⏩"
+                android:textColor="#1B5E20" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
