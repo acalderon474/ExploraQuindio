@@ -7,4 +7,19 @@
         <string name="menu_video">Video</string>
         <string name="menu_web">Web</string>
         <string name="menu_botones">Botones</string>
+        <string name="profile_titulo">Conoce a tu guía</string>
+        <string name="profile_subtitulo">Información para acompañar tu recorrido por el Quindío</string>
+        <string name="profile_imagen_descripcion">Imagen de la guía turística</string>
+
+        <string name="profile_nombre">Guía de Explora Quindío</string>
+        <string name="profile_rol">Guía turística local</string>
+
+        <string name="profile_formacion_titulo">Formación</string>
+        <string name="profile_formacion_contenido">Información sobre la formación y preparación de la guía turística.</string>
+
+        <string name="profile_experiencia_titulo">Experiencia</string>
+        <string name="profile_experiencia_contenido">Experiencia relacionada con recorridos, orientación turística y conocimiento de los principales destinos del Quindío.</string>
+
+        <string name="profile_especialidades_titulo">Especialidades</string>
+        <string name="profile_especialidades_contenido">Naturaleza, cultura, café, recorridos rurales y orientación sobre los principales atractivos turísticos de la región.</string>
     </resources>
