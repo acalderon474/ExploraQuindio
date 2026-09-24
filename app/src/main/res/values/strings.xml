@@ -40,5 +40,6 @@
         <string name="photos_imagen_circasia">Imagen de Circasia</string>
         <string name="photos_imagen_buenavista">Imagen de Buenavista</string>
         <string name="photos_imagen_pijao">Imagen de Pijao</string>
+        <string name="photos_destino_seleccionado">Destino seleccionado: %1$s</string>
 
     </resources>
