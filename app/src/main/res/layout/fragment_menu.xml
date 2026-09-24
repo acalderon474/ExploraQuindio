@@ -4,6 +4,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/menuFragmentRoot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/menuOptionsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/txtMenuTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_titulo"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_perfil" />
+
+        <Button
+            android:id="@+id/btnFotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_fotos" />
+
+        <Button
+            android:id="@+id/btnVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_video" />
+
+        <Button
+            android:id="@+id/btnWeb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_web" />
+
+        <Button
+            android:id="@+id/btnBotones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_botones" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
