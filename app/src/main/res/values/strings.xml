@@ -22,4 +22,23 @@
 
         <string name="profile_especialidades_titulo">Especialidades</string>
         <string name="profile_especialidades_contenido">Naturaleza, cultura, café, recorridos rurales y orientación sobre los principales atractivos turísticos de la región.</string>
+        <string name="photos_titulo">Destinos del Quindío</string>
+        <string name="photos_subtitulo">Desliza para conocer los lugares incluidos en Explora Quindío.</string>
+
+        <string name="destino_salento">Salento</string>
+        <string name="destino_valle_cocora">Valle de Cocora</string>
+        <string name="destino_filandia">Filandia</string>
+        <string name="destino_circasia">Circasia</string>
+        <string name="destino_buenavista">Buenavista</string>
+        <string name="destino_pijao">Pijao</string>
+
+        <string name="destino_descripcion_temporal">Información del destino turístico.</string>
+
+        <string name="photos_imagen_salento">Imagen de Salento</string>
+        <string name="photos_imagen_valle_cocora">Imagen del Valle de Cocora</string>
+        <string name="photos_imagen_filandia">Imagen de Filandia</string>
+        <string name="photos_imagen_circasia">Imagen de Circasia</string>
+        <string name="photos_imagen_buenavista">Imagen de Buenavista</string>
+        <string name="photos_imagen_pijao">Imagen de Pijao</string>
+
     </resources>
