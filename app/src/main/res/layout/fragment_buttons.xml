@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Layout del fragmento recomendador turístico de Explora Quindío.
+
+    Todo el contenido se envuelve en un ScrollView para adaptarse
+    a pantallas pequeñas. La estructura vertical es:
+      1. Encabezado con título, subtítulo y chip identificador.
+      2. Título de la sección de preferencias.
+      3. Tres filas de CheckBoxes (2 + 2 + 1) para las categorías.
+      4. Botón principal "Recomendar destino".
+      5. Fila de botones secundarios "Limpiar" y "Otra alternativa".
+      6. Tarjeta de resultado con nombre, descripción y contador.
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/buttonsFragmentRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFBF5"
-    android:fillViewport="true">
+    android:background="@color/explora_fondo"
+    android:fillViewport="true"
+    android:scrollbars="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,59 +26,117 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvTituloBotones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="¿Qué experiencia prefieres?"
-            android:textColor="#2B2B2B"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvSubtituloBotones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="Marca una o varias opciones y recibe una recomendación demostrativa."
-            android:textColor="#6B6B6B"
-            android:textSize="14sp" />
-
-        <!-- Fila 1 -->
+        <!-- ────────────────────────────────────────────
+             Encabezado de la sección
+             Muestra el título, subtítulo y el chip
+             "Botones" alineados horizontalmente.
+        ──────────────────────────────────────────── -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Bloque de título y subtítulo -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Título principal de la sección -->
+                <TextView
+                    android:id="@+id/tvTituloBotones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buttons_titulo"
+                    android:textColor="@color/explora_texto_oscuro"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <!-- Subtítulo descriptivo de la sección -->
+                <TextView
+                    android:id="@+id/tvSubtituloBotones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/buttons_subtitulo"
+                    android:textColor="@color/explora_texto_secundario"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Chip identificador de la sección -->
+            <TextView
+                android:id="@+id/txtButtonsChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/profile_chip_background"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="6dp"
+                android:text="@string/buttons_chip"
+                android:textColor="@color/explora_verde"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Título de la sección de selección de preferencias -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/buttons_preferencias_titulo"
+            android:textColor="@color/explora_verde"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- ────────────────────────────────────────────
+             CheckBoxes de preferencias turísticas
+             Distribuidos en tres filas:
+               Fila 1: Naturaleza | Cultura
+               Fila 2: Café       | Aventura
+               Fila 3: Descanso   | (espacio vacío)
+             Cada CheckBox ocupa el 50% del ancho (weight=1).
+             minHeight="56dp" garantiza área táctil suficiente.
+        ──────────────────────────────────────────── -->
+
+        <!-- Fila 1: Naturaleza y Cultura -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/cbNaturaleza"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
+                android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/frag_bg_card"
-                android:buttonTint="#1B5E20"
-                android:minHeight="52dp"
-                android:paddingEnd="8dp"
-                android:text="Naturaleza"
-                android:textColor="#2B2B2B" />
+                android:background="@drawable/profile_info_card_background"
+                android:buttonTint="@color/explora_verde"
+                android:minHeight="56dp"
+                android:padding="8dp"
+                android:text="@string/buttons_preferencia_naturaleza"
+                android:textColor="@color/explora_texto_oscuro" />
 
             <CheckBox
                 android:id="@+id/cbCultura"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/frag_bg_card"
-                android:buttonTint="#1B5E20"
-                android:minHeight="52dp"
-                android:paddingEnd="8dp"
-                android:text="Cultura"
-                android:textColor="#2B2B2B" />
+                android:background="@drawable/profile_info_card_background"
+                android:buttonTint="@color/explora_verde"
+                android:minHeight="56dp"
+                android:padding="8dp"
+                android:text="@string/buttons_preferencia_cultura"
+                android:textColor="@color/explora_texto_oscuro" />
         </LinearLayout>
 
-        <!-- Fila 2 -->
+        <!-- Fila 2: Café y Aventura -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,30 +147,30 @@
                 android:id="@+id/cbCafe"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
+                android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/frag_bg_card"
-                android:buttonTint="#1B5E20"
-                android:minHeight="52dp"
-                android:paddingEnd="8dp"
-                android:text="Café"
-                android:textColor="#2B2B2B" />
+                android:background="@drawable/profile_info_card_background"
+                android:buttonTint="@color/explora_verde"
+                android:minHeight="56dp"
+                android:padding="8dp"
+                android:text="@string/buttons_preferencia_cafe"
+                android:textColor="@color/explora_texto_oscuro" />
 
             <CheckBox
                 android:id="@+id/cbAventura"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/frag_bg_card"
-                android:buttonTint="#1B5E20"
-                android:minHeight="52dp"
-                android:paddingEnd="8dp"
-                android:text="Aventura"
-                android:textColor="#2B2B2B" />
+                android:background="@drawable/profile_info_card_background"
+                android:buttonTint="@color/explora_verde"
+                android:minHeight="56dp"
+                android:padding="8dp"
+                android:text="@string/buttons_preferencia_aventura"
+                android:textColor="@color/explora_texto_oscuro" />
         </LinearLayout>
 
-        <!-- Fila 3 -->
+        <!-- Fila 3: Descanso + espacio vacío para mantener la cuadrícula -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,98 +181,142 @@
                 android:id="@+id/cbDescanso"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
+                android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/frag_bg_card"
-                android:buttonTint="#1B5E20"
-                android:minHeight="52dp"
-                android:paddingEnd="8dp"
-                android:text="Descanso"
-                android:textColor="#2B2B2B" />
+                android:background="@drawable/profile_info_card_background"
+                android:buttonTint="@color/explora_verde"
+                android:minHeight="56dp"
+                android:padding="8dp"
+                android:text="@string/buttons_preferencia_descanso"
+                android:textColor="@color/explora_texto_oscuro" />
 
+            <!-- Espacio vacío que ocupa la celda derecha de la fila 3
+                 para conservar la alineación de la cuadrícula -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="4dp"
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <!-- Botones de acción -->
-        <LinearLayout
+        <!-- Botón principal que calcula y muestra la primera
+             recomendación según las preferencias seleccionadas -->
+        <Button
+            android:id="@+id/btnRecomendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
+            android:backgroundTint="@color/explora_verde"
+            android:text="@string/buttons_btn_recomendar"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <!-- ────────────────────────────────────────────
+             Botones secundarios: Limpiar y Otra alternativa
+             "Limpiar" reinicia checkboxes y resultado.
+             "Otra alternativa" avanza al siguiente destino
+             del ranking; deshabilitado hasta tener resultado.
+        ──────────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnRecomendar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1.3"
-                android:backgroundTint="#1B5E20"
-                android:minWidth="0dp"
-                android:text="Recomendar destino"
-                android:textColor="#FFFFFF" />
-
+            <!-- Limpia todas las selecciones y reinicia el resultado -->
             <Button
                 android:id="@+id/btnLimpiar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:backgroundTint="#E8F1E4"
-                android:minWidth="0dp"
-                android:text="Limpiar selección"
-                android:textColor="#1B5E20" />
+                android:backgroundTint="@color/explora_divisor"
+                android:text="@string/buttons_btn_limpiar"
+                android:textAllCaps="false"
+                android:textColor="@color/explora_verde" />
 
+            <!-- Avanza al siguiente destino del ranking de forma cíclica.
+                 Se habilita desde ButtonsFragment cuando el ranking
+                 contiene más de un resultado. -->
             <Button
                 android:id="@+id/btnOtraAlternativa"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:backgroundTint="#F9A825"
-                android:minWidth="0dp"
-                android:text="Otra alternativa"
-                android:textColor="#2B2B2B" />
+                android:backgroundTint="@color/explora_naranja"
+                android:enabled="false"
+                android:text="@string/buttons_btn_alternativa"
+                android:textAllCaps="false"
+                android:textColor="@color/explora_texto_oscuro" />
         </LinearLayout>
 
-        <!-- Resultado -->
+        <!-- ────────────────────────────────────────────
+             Tarjeta de resultado de la recomendación
+             Muestra el destino sugerido con una barra
+             de acento naranja a la izquierda.
+             Contiene:
+               - Nombre del destino (tvResultadoTitulo).
+               - Descripción del destino (tvResultadoDescripcion).
+               - Contador "Recomendación X de Y"
+                 (tvResultadoAlternativa), visible solo cuando
+                 hay un ranking calculado.
+        ──────────────────────────────────────────── -->
         <LinearLayout
             android:id="@+id/layoutResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:background="@drawable/frag_bg_result"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/profile_info_card_background"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvResultadoTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tu recomendación"
-                android:textColor="#6D4C41"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+            <!-- Barra de acento naranja a la izquierda de la tarjeta -->
+            <View
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:background="@color/explora_naranja" />
 
-            <TextView
-                android:id="@+id/tvResultadoDescripcion"
-                android:layout_width="match_parent"
+            <!-- Contenido de la tarjeta de resultado -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Selecciona tus preferencias y presiona «Recomendar destino»."
-                android:textColor="#2B2B2B"
-                android:textSize="15sp" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <TextView
-                android:id="@+id/tvResultadoAlternativa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:textColor="#6D4C41"
-                android:textSize="12sp"
-                android:visibility="gone" />
+                <!-- Nombre del destino recomendado -->
+                <TextView
+                    android:id="@+id/tvResultadoTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buttons_resultado_inicial_titulo"
+                    android:textColor="@color/explora_verde"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Descripción del destino recomendado -->
+                <TextView
+                    android:id="@+id/tvResultadoDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/buttons_resultado_inicial_mensaje"
+                    android:textColor="@color/explora_texto_oscuro"
+                    android:textSize="15sp" />
+
+                <!-- Contador del ranking: "Recomendación X de Y".
+                     Solo visible cuando hay un ranking activo. -->
+                <TextView
+                    android:id="@+id/tvResultadoAlternativa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/explora_texto_secundario"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

@@ -1,19 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!--
+    Layout raíz de la pantalla principal de Explora Quindío.
+    Organiza la interfaz en tres secciones verticales:
+      1. Encabezado superior con logo y nombre de la app.
+      2. Línea divisoria visual.
+      3. Área principal dividida horizontalmente en menú (30%) y contenido (70%).
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- ────────────────────────────────────────────
+         Encabezado superior
+         Muestra el logo y el nombre de la aplicación.
+         Se oculta temporalmente cuando el VideoFragment
+         entra en modo pantalla completa.
+    ──────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@android:color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Logo de la aplicación -->
+        <ImageView
+            android:id="@+id/imgAppLogo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/app_logo_descripcion"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo_explora_quindio" />
+
+        <!-- Contenedor de textos del encabezado -->
+        <LinearLayout
+            android:id="@+id/headerTextContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <!-- Nombre principal de la aplicación -->
+            <TextView
+                android:id="@+id/txtAppTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/explora_verde"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Subtítulo descriptivo de la app -->
+            <TextView
+                android:id="@+id/txtAppSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/app_subtitulo"
+                android:textColor="@color/explora_texto_secundario"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Línea divisoria de 1dp entre el encabezado y el área principal -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/explora_divisor" />
+
+    <!-- ────────────────────────────────────────────
+         Área principal: menú lateral + contenido dinámico
+         Distribuye el espacio horizontalmente:
+           - menuContainer:    weight=3 → ~30% del ancho
+           - contentContainer: weight=7 → ~70% del ancho
+         Ambos contenedores se ocultan en modo
+         pantalla completa del VideoFragment.
+    ──────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/mainContentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <!-- Fragmento del menú lateral de navegación (MenuFragment).
+             Permanece visible mientras el usuario cambia de sección. -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/menuContainer"
+            android:name="com.angelrincon.exploraquindio.fragments.MenuFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            tools:layout="@layout/fragment_menu" />
+
+        <!-- Línea divisoria vertical entre menú y contenido -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/explora_divisor" />
+
+        <!-- Contenedor dinámico donde se reemplazan los fragmentos
+             de contenido (Perfil, Fotos, Video, Web, Botones)
+             según la opción seleccionada en el menú. -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/contentContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            tools:layout="@layout/fragment_profile" />
+
+    </LinearLayout>
+
+</LinearLayout>
