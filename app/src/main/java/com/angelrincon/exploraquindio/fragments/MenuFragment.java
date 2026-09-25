@@ -35,13 +35,33 @@ public class MenuFragment extends Fragment {
         btnWeb = view.findViewById(R.id.btnWeb);
         btnBotones = view.findViewById(R.id.btnBotones);
 
-        btnPerfil.setOnClickListener(v ->
-                cambiarFragment(new ProfileFragment())
-        );
+        // Perfil aparece seleccionado al iniciar la aplicación.
+        actualizarOpcionSeleccionada(btnPerfil);
 
-        btnFotos.setOnClickListener(v ->
-                cambiarFragment(new PhotosFragment())
-        );
+        btnPerfil.setOnClickListener(v -> {
+            actualizarOpcionSeleccionada(btnPerfil);
+            cambiarFragment(new ProfileFragment());
+        });
+
+        btnFotos.setOnClickListener(v -> {
+            actualizarOpcionSeleccionada(btnFotos);
+            cambiarFragment(new PhotosFragment());
+        });
+    }
+
+    private void actualizarOpcionSeleccionada(Button seleccionado) {
+
+        Button[] opciones = {
+                btnPerfil,
+                btnFotos,
+                btnVideo,
+                btnWeb,
+                btnBotones
+        };
+
+        for (Button opcion : opciones) {
+            opcion.setSelected(opcion == seleccionado);
+        }
     }
 
     private void cambiarFragment(Fragment fragment) {
@@ -51,3 +71,4 @@ public class MenuFragment extends Fragment {
                 .commit();
     }
 }
+

@@ -4,6 +4,7 @@
     android:id="@+id/photosFragmentRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/explora_fondo"
     android:fillViewport="true">
 
     <LinearLayout
@@ -11,30 +12,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/txtPhotosTitulo"
+        <!-- Encabezado -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/photos_titulo"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:gravity="top"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtPhotosSubtitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/photos_subtitulo"
-            android:textSize="14sp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/txtPhotosTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photos_titulo"
+                    android:textColor="@color/explora_texto_oscuro"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtPhotosSubtitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/photos_subtitulo"
+                    android:textColor="@color/explora_texto_secundario"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtPhotosChip"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/profile_chip_background"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:text="@string/photos_chip"
+                android:textColor="@color/explora_verde"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Salento -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardSalento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,19 +78,20 @@
                 <ImageView
                     android:id="@+id/imgSalento"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="170dp"
                     android:contentDescription="@string/photos_imagen_salento"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/salento" />
 
                 <TextView
                     android:id="@+id/txtSalentoTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="12dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="12dp"
+                    android:paddingStart="14dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="14dp"
                     android:text="@string/destino_salento"
+                    android:textColor="@color/explora_texto_oscuro"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -64,22 +99,24 @@
                     android:id="@+id/txtSalentoDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="12dp"
-                    android:paddingTop="4dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="12dp"
+                    android:paddingStart="14dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="14dp"
                     android:text="@string/destino_descripcion_temporal"
+                    android:textColor="@color/explora_texto_secundario"
                     android:textSize="14sp" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
-
+        <!-- Valle de Cocora -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardValleCocora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,17 +126,18 @@
                 <ImageView
                     android:id="@+id/imgValleCocora"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="170dp"
                     android:contentDescription="@string/photos_imagen_valle_cocora"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/valle_cocora" />
 
                 <TextView
                     android:id="@+id/txtValleCocoraTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:padding="14dp"
                     android:text="@string/destino_valle_cocora"
+                    android:textColor="@color/explora_texto_oscuro"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -107,19 +145,23 @@
                     android:id="@+id/txtValleCocoraDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="14dp"
                     android:text="@string/destino_descripcion_temporal"
+                    android:textColor="@color/explora_texto_secundario"
                     android:textSize="14sp" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
-
+        <!-- Filandia -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardFilandia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,17 +171,18 @@
                 <ImageView
                     android:id="@+id/imgFilandia"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="170dp"
                     android:contentDescription="@string/photos_imagen_filandia"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/filandia" />
 
                 <TextView
                     android:id="@+id/txtFilandiaTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:padding="14dp"
                     android:text="@string/destino_filandia"
+                    android:textColor="@color/explora_texto_oscuro"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -147,19 +190,23 @@
                     android:id="@+id/txtFilandiaDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="14dp"
                     android:text="@string/destino_descripcion_temporal"
+                    android:textColor="@color/explora_texto_secundario"
                     android:textSize="14sp" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
-
+        <!-- Circasia -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardCircasia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -169,17 +216,18 @@
                 <ImageView
                     android:id="@+id/imgCircasia"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="170dp"
                     android:contentDescription="@string/photos_imagen_circasia"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/circasia" />
 
                 <TextView
                     android:id="@+id/txtCircasiaTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:padding="14dp"
                     android:text="@string/destino_circasia"
+                    android:textColor="@color/explora_texto_oscuro"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -187,19 +235,23 @@
                     android:id="@+id/txtCircasiaDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="14dp"
                     android:text="@string/destino_descripcion_temporal"
+                    android:textColor="@color/explora_texto_secundario"
                     android:textSize="14sp" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
-
+        <!-- Buenavista -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardBuenavista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -209,17 +261,18 @@
                 <ImageView
                     android:id="@+id/imgBuenavista"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="170dp"
                     android:contentDescription="@string/photos_imagen_buenavista"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/buenavista" />
 
                 <TextView
                     android:id="@+id/txtBuenavistaTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:padding="14dp"
                     android:text="@string/destino_buenavista"
+                    android:textColor="@color/explora_texto_oscuro"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -227,19 +280,23 @@
                     android:id="@+id/txtBuenavistaDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="14dp"
                     android:text="@string/destino_descripcion_temporal"
+                    android:textColor="@color/explora_texto_secundario"
                     android:textSize="14sp" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
-
+        <!-- Pijao -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardPijao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -249,17 +306,18 @@
                 <ImageView
                     android:id="@+id/imgPijao"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="170dp"
                     android:contentDescription="@string/photos_imagen_pijao"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/pijao" />
 
                 <TextView
                     android:id="@+id/txtPijaoTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:padding="14dp"
                     android:text="@string/destino_pijao"
+                    android:textColor="@color/explora_texto_oscuro"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -267,11 +325,15 @@
                     android:id="@+id/txtPijaoDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="14dp"
                     android:text="@string/destino_descripcion_temporal"
+                    android:textColor="@color/explora_texto_secundario"
                     android:textSize="14sp" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>

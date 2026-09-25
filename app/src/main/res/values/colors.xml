@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="explora_verde">#146B2E</color>
+    <color name="explora_texto_secundario">#6F756F</color>
+    <color name="explora_divisor">#E4E4E4</color>
+    <color name="explora_naranja">#FFAA1C</color>
+    <color name="explora_texto_oscuro">#263326</color>
+    <color name="explora_fondo">#FFFCF7</color>
 </resources>

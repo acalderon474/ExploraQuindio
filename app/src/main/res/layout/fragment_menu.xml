@@ -1,60 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/menuFragmentRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="@color/explora_verde"
+    android:fillViewport="true"
+    android:scrollbars="none">
 
     <LinearLayout
         android:id="@+id/menuOptionsContainer"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/txtMenuTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="12dp"
             android:text="@string/menu_titulo"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:paddingBottom="12dp" />
+            android:letterSpacing="0.08" />
 
         <Button
             android:id="@+id/btnPerfil"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_perfil" />
+            android:layout_height="48dp"
+            android:backgroundTint="@color/menu_button_background"
+            android:drawableStart="@android:drawable/ic_menu_myplaces"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/menu_button_text"
+            android:gravity="center_vertical|start"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:text="@string/menu_perfil"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_button_text"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btnFotos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_fotos" />
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/menu_button_background"
+            android:drawableStart="@android:drawable/ic_menu_gallery"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/menu_button_text"
+            android:gravity="center_vertical|start"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:text="@string/menu_fotos"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_button_text"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btnVideo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_video" />
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/menu_button_background"
+            android:drawableStart="@android:drawable/ic_media_play"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/menu_button_text"
+            android:gravity="center_vertical|start"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:text="@string/menu_video"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_button_text"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btnWeb"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_web" />
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/menu_button_background"
+            android:drawableStart="@android:drawable/ic_menu_compass"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/menu_button_text"
+            android:gravity="center_vertical|start"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:text="@string/menu_web"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_button_text"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btnBotones"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/menu_botones" />
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/menu_button_background"
+            android:drawableStart="@android:drawable/ic_menu_manage"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/menu_button_text"
+            android:gravity="center_vertical|start"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:text="@string/menu_botones"
+            android:textAllCaps="false"
+            android:textColor="@color/menu_button_text"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

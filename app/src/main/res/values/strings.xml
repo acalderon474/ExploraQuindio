@@ -7,23 +7,10 @@
         <string name="menu_video">Video</string>
         <string name="menu_web">Web</string>
         <string name="menu_botones">Botones</string>
-        <string name="profile_titulo">Conoce a tu guía</string>
-        <string name="profile_subtitulo">Información para acompañar tu recorrido por el Quindío</string>
         <string name="profile_imagen_descripcion">Imagen de la guía turística</string>
 
-        <string name="profile_nombre">Guía de Explora Quindío</string>
-        <string name="profile_rol">Guía turística local</string>
-
-        <string name="profile_formacion_titulo">Formación</string>
-        <string name="profile_formacion_contenido">Información sobre la formación y preparación de la guía turística.</string>
-
-        <string name="profile_experiencia_titulo">Experiencia</string>
-        <string name="profile_experiencia_contenido">Experiencia relacionada con recorridos, orientación turística y conocimiento de los principales destinos del Quindío.</string>
-
-        <string name="profile_especialidades_titulo">Especialidades</string>
-        <string name="profile_especialidades_contenido">Naturaleza, cultura, café, recorridos rurales y orientación sobre los principales atractivos turísticos de la región.</string>
         <string name="photos_titulo">Destinos del Quindío</string>
-        <string name="photos_subtitulo">Desliza para conocer los lugares incluidos en Explora Quindío.</string>
+        <string name="photos_subtitulo">Descubre algunos de los lugares que hacen especial nuestra región.</string>
 
         <string name="destino_salento">Salento</string>
         <string name="destino_valle_cocora">Valle de Cocora</string>
@@ -41,5 +28,26 @@
         <string name="photos_imagen_buenavista">Imagen de Buenavista</string>
         <string name="photos_imagen_pijao">Imagen de Pijao</string>
         <string name="photos_destino_seleccionado">Destino seleccionado: %1$s</string>
+        <string name="app_subtitulo">Guía turística móvil interactiva</string>
+        <string name="app_logo_descripcion">Logotipo de Explora Quindío</string>
+        <string name="profile_titulo">Conoce a tu guía</string>
+        <string name="profile_subtitulo">Una compañía cercana para descubrir cada experiencia.</string>
+        <string name="profile_chip">Perfil</string>
+
+        <string name="profile_nombre">Valentina Castaño</string>
+        <string name="profile_rol">Guía turística regional</string>
+
+        <string name="profile_formacion_titulo">Formación</string>
+        <string name="profile_formacion_contenido">Tecnóloga en guianza turística, con formación complementaria en patrimonio cultural y atención al visitante.</string>
+
+        <string name="profile_experiencia_titulo">Experiencia</string>
+        <string name="profile_experiencia_contenido">Acompañamiento de recorridos demostrativos relacionados con naturaleza, cultura cafetera y turismo comunitario.</string>
+
+        <string name="profile_especialidades_titulo">Especialidades</string>
+        <string name="profile_especialidades_contenido">Senderismo interpretativo, experiencias de café y orientación para visitantes.</string>
+
+        <string name="profile_scroll_hint">Contenido preparado para desplazamiento vertical</string>
+
+        <string name="photos_chip">Fotos</string>
 
     </resources>
