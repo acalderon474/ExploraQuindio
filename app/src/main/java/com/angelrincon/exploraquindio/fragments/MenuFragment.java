@@ -47,6 +47,19 @@ public class MenuFragment extends Fragment {
             actualizarOpcionSeleccionada(btnFotos);
             cambiarFragment(new PhotosFragment());
         });
+
+        // Navegación hacia el módulo Video.
+        btnVideo.setOnClickListener(v -> {
+            actualizarOpcionSeleccionada(btnVideo);
+            cambiarFragment(new VideoFragment());
+        });
+
+        // Navegación hacia el módulo Web.
+        btnWeb.setOnClickListener(v -> {
+            actualizarOpcionSeleccionada(btnWeb);
+            cambiarFragment(new WebFragment());
+        });
+
     }
 
     private void actualizarOpcionSeleccionada(Button seleccionado) {

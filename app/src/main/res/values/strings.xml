@@ -50,4 +50,67 @@
 
         <string name="photos_chip">Fotos</string>
 
-    </resources>
+        <string name="video_titulo_seccion">Recorrido audiovisual</string>
+        <string name="video_subtitulo">Controles sencillos para disfrutar el contenido turístico.</string>
+        <string name="video_chip">Video</string>
+        <string name="video_titulo_contenido">Quindío entre montañas y café</string>
+
+        <string name="video_tiempo_inicial">00:00 / 00:00</string>
+        <string name="video_tiempo_formato">%1$s / %2$s</string>
+
+        <string name="video_estado_cargando">Cargando video...</string>
+        <string name="video_estado_listo">Video listo para reproducir</string>
+        <string name="video_estado_reproduciendo">Reproduciendo</string>
+        <string name="video_estado_pausa">En pausa</string>
+        <string name="video_estado_retrocediendo">Retrocediendo 10 segundos</string>
+        <string name="video_estado_avanzando">Avanzando 10 segundos</string>
+        <string name="video_estado_finalizado">Reproducción finalizada</string>
+        <string name="video_estado_error">No se pudo reproducir el video</string>
+        <string name="video_estado_archivo_faltante">Video local no disponible</string>
+
+        <string name="video_error_archivo">No se encontró res/raw/%1$s.mp4</string>
+
+        <string name="video_btn_play">▶ Reproducir</string>
+        <string name="video_btn_pausa">⏸ Pausar</string>
+        <string name="video_btn_retroceder">⏪ 10 s</string>
+        <string name="video_btn_avanzar">10 s ⏩</string>
+
+        <string name="video_btn_pantalla_completa">⛶</string>
+        <string name="video_btn_salir_pantalla_completa">↙</string>
+
+        <string name="video_descripcion_play">Reproducir video</string>
+        <string name="video_descripcion_pausa">Pausar video</string>
+        <string name="video_descripcion_retroceder">Retroceder 10 segundos</string>
+        <string name="video_descripcion_avanzar">Avanzar 10 segundos</string>
+        <string name="video_descripcion_pantalla_completa">Abrir video en pantalla completa</string>
+        <string name="video_descripcion_salir_pantalla_completa">Salir de pantalla completa</string>
+        <string name="web_titulo_seccion">Explora la web</string>
+        <string name="web_subtitulo">Consulta sitios de interés turístico sin salir de la aplicación.</string>
+        <string name="web_chip">Web</string>
+
+        <string name="web_hint_url">https://www.quindio.gov.co</string>
+        <string name="web_btn_cargar">Cargar página</string>
+        <string name="web_sin_pagina">Ninguna página cargada</string>
+
+        <string name="web_placeholder_inicial_titulo">Navegador turístico</string>
+        <string name="web_placeholder_inicial_mensaje">La página seleccionada aparecerá en este espacio.</string>
+
+        <string name="web_error_url_vacia">Escribe una dirección URL</string>
+        <string name="web_placeholder_vacio_titulo">Dirección vacía</string>
+        <string name="web_placeholder_vacio_mensaje">Escribe una dirección web y presiona «Cargar página».</string>
+
+        <string name="web_error_url_invalida">La dirección no tiene un formato válido</string>
+        <string name="web_placeholder_url_invalida_titulo">URL no válida</string>
+        <string name="web_placeholder_url_invalida_mensaje">Escribe una dirección válida, por ejemplo: https://www.quindio.gov.co</string>
+
+        <string name="web_error_conexion_titulo">Error de conexión</string>
+        <string name="web_error_conexion_mensaje">No se pudo cargar la página. Verifica tu conexión a Internet y que la dirección sea correcta.</string>
+
+        <string name="web_estado_cargando">Cargando: %1$s</string>
+        <string name="web_estado_error">No se pudo cargar: %1$s</string>
+
+        <string name="web_esquema_no_permitido">Este tipo de enlace no está permitido dentro del navegador.</string>
+
+        <string name="web_btn_atras">← Atrás</string>
+
+</resources>
